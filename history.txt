@@ -1,0 +1,1000 @@
+ 1415  cd docker/
+ 1416  ls
+ 1417  cd ubuntu/
+ 1418  cat Dockerfile 
+ 1419  vim Dockerfile 
+ 1420  #docker build -t ub_test_image:v5 .
+ 1421  docker images
+ 1422  #docker build -t ub_test_image:v6 .
+ 1423  docker build -t ub_test_image:v6 .
+ 1424  clear
+ 1425  docker images
+ 1426  docker run -d --name test -p 8080:80 ub_test_image:v6
+ 1427  docker ps 
+ 1428  vim Dockerfile 
+ 1429  docker ps
+ 1430  docker exec -it test /bin/bash
+ 1431  docker ps
+ 1432  docker run -d --name test01 -p 8081:80 ub_test_image:v6
+ 1433  docker run -d --name test02 -p 8082:80 ub_test_image:v6
+ 1434  docker ps 
+ 1435  docker network ls
+ 1436  docker inpsect test01
+ 1437  docker inspect test01
+ 1438  docker network create --help
+ 1439  docker network ls
+ 1440  docker ps 
+ 1441  docker networl create test_network
+ 1442  docker network create test_network
+ 1443  docker network ls
+ 1444  docker network connect test01 test02 test
+ 1445  docker network connect test01 
+ 1446  docker network connect --help
+ 1447  docker run -d --name --network test_network test03 -p 8083:80 ub_test_image:v6
+ 1448  docker run -d --name test03  --network test_network  -p 8083:80 ub_test_image:v6
+ 1449  docker network ls
+ 1450  docker inspect test03
+ 1451  docker inspect test03 | grep network
+ 1452  docker inspect test03 | grep IP
+ 1453  docker inspect test03 | grep networking
+ 1454  docker inspect test03 | grep network
+ 1455  clear
+ 1456  docker ps
+ 1457  #docker exec -it container1 ping container2
+ 1458  docker exec -it test ping test01
+ 1459  docker exec -it test /bin/bash1
+ 1460  docker exec -it test /bin/bash
+ 1461  docker exec -it test01 /bin/bash
+ 1462  docker exec -it test ping test01
+ 1463  docker ps
+ 1464  docker exec -it test ping test01
+ 1465  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' test01
+ 1466  docker exec -it test ping 172.17.0.3
+ 1467  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' test
+ 1468  docker exec -it test01 ping 172.17.0.2
+ 1469  docker exec -it test01 ping 172.17.0.3
+ 1470  docker exec -it test01 ping 172.17.0.4
+ 1471  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' test02
+ 1472  docker exec -it test01 ping 172.17.0.4
+ 1473  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' test04
+ 1474  docker images
+ 1475  docker ps
+ 1476  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' test03
+ 1477  docker exec -it test01 ping 172.20.0.2
+ 1478  docker ps 
+ 1479  docker container stop all
+ 1480  docker container stop 
+ 1481  docker container rm -f test test01 test02 test03
+ 1482  clear
+ 1483  docke ps -a
+ 1484  docker ps -a
+ 1485  clear
+ 1486  docker images
+ 1487  docker run -d --name test03  --network test_network  -p 8083:80 ub_test_image:v6
+ 1488  docker ps 
+ 1489  vim Dockerfile 
+ 1490  docker ps
+ 1491  docker cp C:/UsersAsad/python/HTML/. test03 /etc/www/html
+ 1492  docker exec -it test03 /bin/bash
+ 1493  docker pull mysql
+ 1494  docker images
+ 1495  clear
+ 1496  docker images
+ 1497  docker rmi 203e9c7de301 203e9c7de301
+ 1498  docker rmi 203e9c7de301 
+ 1499  docker rmi 253116fa8bca 253116fa8bca
+ 1500  clear
+ 1501  docker rmi -f 253116fa8bca 253116fa8bca
+ 1502  clear
+ 1503  docker ps
+ 1504  docker ps -a
+ 1505  docker images
+ 1506  docker container run -d --name nginx -p 80:80 nginx
+ 1507  docker ps
+ 1508  docker stop nginx 
+ 1509  docker rm nginx 
+ 1510  clear
+ 1511  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql
+ 1512  docker ps
+ 1513  docker volume ls
+ 1514  docker inspect mysql |grep volume
+ 1515  cd /var/lib/docker-desktop/
+ 1516  ls
+ 1517  docker exec -it mysql /bin/bash
+ 1518  docker volume
+ 1519  docker volume ls
+ 1520  clear
+ 1521  docker volume ls
+ 1522  docker inspect mysql
+ 1523  docker inspect mysql |grep volume
+ 1524  cd /var/lib
+ 1525  ls
+ 1526  cd docker-desktop/
+ 1527  ls
+ 1528  docker exec -it mysql /bin/bash
+ 1529  docker inspect mysql |grep volume
+ 1530  docker inspect mysql 
+ 1531  cd /var/lib/docker/volumes/7ac17984c9507ba9dd41e264248e308ef8fb4c2a9ea46b840c78e57d3574e097/_data
+ 1532  cd /var/lib/docker
+ 1533  /var/lib/docker/volumes/
+ 1534  cd /
+ 1535  cd /var/lib/docker
+ 1536  ls
+ 1537  cd docker-desktop/
+ 1538  ls
+ 1539  ls -al
+ 1540  cd ..
+ 1541  ls
+ 1542  cd ..
+ 1543  ls
+ 1544  ll
+ 1545  clear
+ 1546  cd /var
+ 1547  ls
+ 1548  cd lib
+ 1549  ls
+ 1550  cd docker-desktop/
+ 1551  ls
+ 1552  cd/
+ 1553  cd /
+ 1554  cd etc
+ 1555  ls
+ 1556  locate volume
+ 1557  locate docker | grep volume
+ 1558  cd /usr/share/man
+ 1559  ls
+ 1560  cd man1
+ 1561  ls
+ 1562  locate docker | grep volume
+ 1563  locate mysql
+ 1564  docker inspect mysql 
+ 1565  locate 7ac17984c9507ba9dd41e264248e308ef8fb4c2a9ea46b840c78e57d3574e097
+ 1566  cd /
+ 1567  locate 7ac17984c9507ba9dd41e264248e308ef8fb4c2a9ea46b840c78e57d3574e097
+ 1568  cd usr
+ 1569  ls
+ 1570  cd sbin
+ 1571  ls
+ 1572  cd /
+ 1573  locate data_
+ 1574  locate _data
+ 1575  locate docker | grep _data
+ 1576  su
+ 1577  sudo su
+ 1578  docker ps
+ 1579  clear
+ 1580  docker ps
+ 1581  locate docker | grep volumes
+ 1582  locate docker | grep volume
+ 1583  docker volume ls
+ 1584  docker volume create -d abc
+ 1585  docker volume ls
+ 1586  docker volume create --help
+ 1587  docker ps
+ 1588  docker rm -f mysql
+ 1589  clear
+ 1590  docker images
+ 1591  clear
+ 1592  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql mysql_vol:/var/lib/msql mysql
+ 1593  docker ps
+ 1594  docker rm mysql
+ 1595  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true  mysql_vol:/var/lib/msql mysql
+ 1596  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true  mysql_vol:/var/lib/msql mysql_container
+ 1597  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true  mysql_container mysql_vol:/var/lib/msql 
+ 1598  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true  mysql mysql_vol:/var/lib/msql mysql_container
+ 1599  docker ps 
+ 1600  docker ps -a
+ 1601  docker volume ls
+ 1602  docker rm mysql
+ 1603  docker volume ls
+ 1604  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  mysql -v  mysql_vol:/var/lib/msql mysql_container
+ 1605  docker ps
+ 1606  clear
+ 1607  docker volume ls
+ 1608  docker ps
+ 1609  docker ps 
+ 1610  docker ps -a
+ 1611  docker inspect mysql
+ 1612  clear
+ 1613  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v  mysql_vol:/var/lib/msql mysql
+ 1614  docker ps
+ 1615  docker volume ls
+ 1616  docker volume inspect mysql_vol
+ 1617  cd /var/lib/docker/
+ 1618  cd /var/lib
+ 1619  ls
+ 1620  cd docker-desktop/
+ 1621  ls
+ 1622  ls -a
+ 1623  ll -a
+ 1624  docker volume inspect mysql_vol
+ 1625  clear
+ 1626  docker volume inspect mysql_vol
+ 1627  docker ps
+ 1628  docker rm - mysql
+ 1629  docker rm -f mysql
+ 1630  docker volume ls
+ 1631  clear
+ 1632  docker volume ls
+ 1633  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v  mysql_vol:/var/lib/msql mysql
+ 1634  docker ps
+ 1635  docker exec -it mysql bash
+ 1636  clear
+ 1637  docker ps
+ 1638  docker rm -f mysql
+ 1639  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v  mysql_vol:/var/lib/msql mysql
+ 1640  docker exec -it mysql bash
+ 1641  clear
+ 1642  docker ps
+ 1643  docker rm -f mysql
+ 1644  #docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v  mysql_vol:/var/lib/msql mysql
+ 1645  docker volume ls
+ 1646  cd /
+ 1647  ls
+ 1648  cd /home/asad/docker
+ 1649  ls
+ 1650  cd ubuntu/
+ 1651  ls
+ 1652  ls -al
+ 1653  clear
+ 1654  ll
+ 1655  mkdir mycode_dir
+ 1656  ls
+ 1657  ll
+ 1658  clear
+ 1659  ll
+ 1660  #docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  --mount ${pwd}mycode_dir:/var/lib/msql mysql
+ 1661  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/msql mysql
+ 1662  docker ps
+ 1663  docker inspect mysql | grep volume
+ 1664  docker inspect mysql | grep bind
+ 1665  docker inspect mysql 
+ 1666  docker inspect mysql | grep mounts
+ 1667  docker inspect mysql | grep Mounts
+ 1668  docker exec -it mysql bash
+ 1669  cd mycode_dir/
+ 1670  ls
+ 1671  ll
+ 1672  touch abc.txt
+ 1673  mkdir test 
+ 1674  clear
+ 1675  docker exec -it mysql bash
+ 1676  #docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/msql mysql
+ 1677  #docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/mysql mysql
+ 1678  docker rm -f mysql
+ 1679  clear
+ 1680  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/msql mysql
+ 1681  docker volume ls
+ 1682  docker inspect mysql
+ 1683  docker rm -f mysql
+ 1684  clear
+ 1685  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/mysql mysql
+ 1686  docker ps
+ 1687  docker inspect mysql
+ 1688  docker exec -it mysql bash
+ 1689  docker rm -f mysql
+ 1690  clear
+ 1691  docker volume ls
+ 1692  docker ps
+ 1693  ll
+ 1694  cd ..
+ 1695  ls
+ 1696  ll
+ 1697  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/mysql mysql
+ 1698  ls
+ 1699  cd mycode_dir/
+ 1700  ls
+ 1701  touch abc.txt
+ 1702  docker exec -it mysql bash
+ 1703  docker rm -f mysql
+ 1704  export --help
+ 1705  export -p
+ 1706  export --help
+ 1707  docker compose --v
+ 1708  docker compose -v
+ 1709  docker compose --version
+ 1710  docker-compose -v
+ 1711  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/mysql mysql
+ 1712  docker ps
+ 1713  docker logs mysql 
+ 1714  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes  -v $(pwd)/mycode_dir:/var/lib/mysql mysql
+ 1715  clear
+ 1716  ll
+ 1717  cd .
+ 1718  cd ..
+ 1719  clear
+ 1720  ls
+ 1721  vim docker_compose.yaml
+ 1722  docker compose up -d
+ 1723  docker compose up -d .
+ 1724  docker compose up -d -f docker_compose.yaml
+ 1725  docker compose up -f docker_compose.yaml -d
+ 1726  vm docker_compose.yaml 
+ 1727  vim docker_compose.yaml 
+ 1728  docker compose up -d 
+ 1729  docker compose 
+ 1730  docker compose up 
+ 1731  docker compose -f docker_compose.yaml -d
+ 1732  docker compose -f docker_compose.yaml up -d
+ 1733  vim docker_compose.yaml 
+ 1734  docker compose -f docker_compose.yaml up -d
+ 1735  docker ps
+ 1736  vim docker_compose.yaml 
+ 1737  docker-compose build
+ 1738  ls
+ 1739  docker compose build 
+ 1740  docker-compose build .
+ 1741  docker-compose build 
+ 1742  docker-compose -f docker_compose.yaml up -d
+ 1743  docker ps
+ 1744  vim dockercompose.yaml 
+ 1745  vim docker_compose.yaml 
+ 1746  docker-compose -f docker_compose.yaml up -d
+ 1747  docker ps
+ 1748  docker logs mysql_container 
+ 1749  vim docker_compose.yaml 
+ 1750  docker-compose -f docker_compose.yaml up -d
+ 1751  docker logs mysql_container 
+ 1752  docker ps
+ 1753  docker compose down
+ 1754  docker-compose down
+ 1755  docke ps
+ 1756  docker ps
+ 1757  docker-compose down
+ 1758  docker compose down
+ 1759  docker-compose -f docker_compose.yaml up -d
+ 1760  clear
+ 1761  ls
+ 1762  ll
+ 1763  docker compose down
+ 1764  ls
+ 1765  ll
+ 1766  ls
+ 1767  cat docker_compose.yaml 
+ 1768  vim docker_compose.yaml 
+ 1769  docker-compose -f docker_compose.yaml up -d
+ 1770  vim docker_compose.yaml 
+ 1771  docker-compose -f docker_compose.yaml up -d
+ 1772  vim docker_compose.yaml 
+ 1773  docker-compose -f docker_compose.yaml up -d
+ 1774  ls
+ 1775  clear
+ 1776  ls -ltr
+ 1777  docker-compose down docker_compose.yaml 
+ 1778  docker-compose down -f docker_compose.yaml 
+ 1779  docker compose down -f docker_compose.yaml 
+ 1780  docker compose  -f docker_compose.yaml down
+ 1781  docker ps 
+ 1782  vim docker_compose.yaml 
+ 1783  ls
+ 1784  ll
+ 1785  vim docker_compose.yaml 
+ 1786  docker-compose -f docker_compose.yaml up -d
+ 1787  docker ps
+ 1788  clear
+ 1789  docker ps
+ 1790  ll
+ 1791  docker-compose -f docker_compose.yaml down 
+ 1792  docker network ls
+ 1793  docker volume ls
+ 1794  clear
+ 1795  ll
+ 1796  vim docker_compose.yaml 
+ 1797  mv docker_compose.yaml  docker_compose02.yaml 
+ 1798  ll
+ 1799  mv docker_compose02.yaml  docker_compose.yaml 
+ 1800  ll
+ 1801  clear
+ 1802  ll
+ 1803  cat Dockerfile 
+ 1804  clea
+ 1805  clear
+ 1806  ll
+ 1807  vim docker_compose.yaml 
+ 1808  vim docker_compose02.yaml 
+ 1809  docker-compose -f docker_compose02.yaml up -d
+ 1810  docker ps
+ 1811  docker rm -f mysql
+ 1812  clear
+ 1813  docker ps -a
+ 1814  docker rm -f alpine
+ 1815  clear
+ 1816  vim docker_compose02.yaml 
+ 1817  docker-compose -f docker_compose02.yaml up -d
+ 1818  docker ps
+ 1819  vim docker_compose02.yaml 
+ 1820  docker volume ls
+ 1821  clear
+ 1822  docker volume ls
+ 1823  docker-compose -f docker_compose02.yaml up -d
+ 1824  vim docker_compose02.yaml 
+ 1825  docker-compose -f docker_compose02.yaml up -d
+ 1826  docker volume ls
+ 1827  docker ps
+ 1828  vim docker_compose02.yaml 
+ 1829  docker-compose -f docker_compose02.yaml up -d
+ 1830  vim docker_compose02.yaml 
+ 1831  docker-compose -f docker_compose02.yaml up -d
+ 1832  vim docker_compose02.yaml 
+ 1833  docker-compose -f docker_compose02.yaml up -d
+ 1834  clear
+ 1835  docker-compose -f docker_compose02.yaml up -d
+ 1836  vim docker_compose02.yaml 
+ 1837  docker-compose -f docker_compose02.yaml up -d
+ 1838  vim docker_compose02.yaml 
+ 1839  docker-compose -f docker_compose02.yaml up -d
+ 1840  docker volume ls
+ 1841  vim docker_compose02.yaml 
+ 1842  docker-compose -f docker_compose02.yaml up -d
+ 1843  history > history.txt
+ 1844  ls
+ 1845  cat history.txt 
+ 1846  clear
+ 1847  ll
+ 1848  cat docker_compose.yaml 
+ 1849  docker images
+ 1850  ls
+ 1851  cat docker_compose.yaml 
+ 1852  docker ps
+ 1853  clear
+ 1854  ll
+ 1855  cat docker_compose02.yaml 
+ 1856  docker volume ls
+ 1857  clear
+ 1858  docker network ls
+ 1859  cd ..
+ 1860  ls
+ 1861  cd..
+ 1862  ls
+ 1863  cd ..
+ 1864  ls
+ 1865  ll
+ 1866  clear
+ 1867  ll
+ 1868  ls
+ 1869  ls -ltr
+ 1870  clear
+ 1871  ls -ltr
+ 1872  cd test
+ 1873  ll
+ 1874  cat abc.
+ 1875  clear
+ 1876  ls
+ 1877  cat abc.py
+ 1878  clear
+ 1879  git --version
+ 1880  git init
+ 1881  git status
+ 1882  git add *
+ 1883  git add all
+ 1884  git add .
+ 1885  git status
+ 1886  ls
+ 1887  ls -tlr
+ 1888  git add --help
+ 1889  git add -a
+ 1890  git add -A
+ 1891  git status
+ 1892  git add abc.txt
+ 1893  rm abc.py 
+ 1894  rm abc.txt 
+ 1895  clear
+ 1896  rm -f abc.txt 
+ 1897  clear
+ 1898  ll
+ 1899  cd .git
+ 1900  ls
+ 1901  cd branches/
+ 1902  ls -a
+ 1903  clear
+ 1904  cd ../../
+ 1905  sl
+ 1906  ls
+ 1907  ll
+ 1908  clear
+ 1909  echo "This is file 1 version" > abc.txt
+ 1910  ls
+ 1911  git status
+ 1912  git add  abc.txt 
+ 1913  git status
+ 1914  git commit -m "version1 committed"
+ 1915  git status
+ 1916  echo "This is file 2 version" >> abc.txt
+ 1917  git status
+ 1918  git commit -a -m "version:2 committ"
+ 1919  git status
+ 1920  git add abc.txt 
+ 1921  git status
+ 1922  git commit 
+ 1923  docker ps 
+ 1924  docker rm -f nginx_server 
+ 1925  clear
+ 1926  restart
+ 1927  cd /var/lib
+ 1928  ls
+ 1929  docer ps
+ 1930  docker volume ls
+ 1931  docker volume rm 0161cc2fefb909629db68061d80c4a53b5c8c76c20eea6de4350cd8a110b92b1 
+ 1932  docker rm mysql
+ 1933  docker volume rm 0161cc2fefb909629db68061d80c4a53b5c8c76c20eea6de4350cd8a110b92b1 
+ 1934  clear
+ 1935  docker volume ls
+ 1936  docker ps
+ 1937  docker exec -it mysql bash
+ 1938  ls
+ 1939  clear
+ 1940  cd /home/asad/docker/ubuntu/
+ 1941  ls
+ 1942  cd mycode_dir/
+ 1943  ls
+ 1944  ll
+ 1945  rm test/
+ 1946  rm r test/
+ 1947  rm -r test/
+ 1948  ll
+ 1949  clear
+ 1950  ll
+ 1951  rm abc.txt 
+ 1952  ll
+ 1953  rm -r mycode_dir/
+ 1954  ll
+ 1955  cd mycode_dir/
+ 1956  touch abc.txt
+ 1957  cd ..
+ 1958  touch abc.txt
+ 1959  ls
+ 1960  cd mycode_dir/
+ 1961  ls
+ 1962  cat container_file.txt 
+ 1963  cd ..
+ 1964  ls
+ 1965  ls 
+ 1966  ll
+ 1967  sudo su
+ 1968  ls
+ 1969  pwd
+ 1970  docker ps
+ 1971  docker compose
+ 1972  docker compose down
+ 1973  ls
+ 1974  docker compose down docker_compose.yaml 
+ 1975  ls
+ 1976  touch env.txt
+ 1977  vim env.txt 
+ 1978  vim docker_compose.yaml 
+ 1979  docker compose -f docker_compose.yaml up -d
+ 1980  vim docker_compose.yaml 
+ 1981  vim env.txt 
+ 1982  docker compose -f docker_compose.yaml up -d
+ 1983  docker ps
+ 1984  docker logs mysql_container 
+ 1985  docker exec -it mysql_container bash
+ 1986  vim docker_compose.yaml 
+ 1987  vim env.txt 
+ 1988  docker compose -f docker_compose.yaml up -d
+ 1989  docker exec -it mysql_container bash
+ 1990  docker volume ls
+ 1991  docker network ls
+ 1992  docker network create test_network
+ 1993  docker nework rm test_network
+ 1994  docker network rm test_network
+ 1995  pwd
+ 1996  ls
+ 1997  docker volume ls
+ 1998  docker ps
+ 1999  git status
+ 2000  ls
+ 2001  cd test
+ 2002  git status
+ 2003  clea
+ 2004  git config
+ 2005  git commit
+ 2006  cd .git
+ 2007  ll
+ 2008  cd config
+ 2009  cat config
+ 2010  vim config 
+ 2011  git confing --global
+ 2012  git config --global
+ 2013  git commit
+ 2014  cd ..
+ 2015  git commit
+ 2016  git config --global asadork08@gmail.com
+ 2017  git config --global user.email asadork08@gmail.com
+ 2018  git config --global user.name Asadkhan08
+ 2019  git commit -m "version2 commit"
+ 2020  git status
+ 2021  clear
+ 2022  ls
+ 2023  echo "this version:3 edit" >>abc.txt
+ 2024  git status
+ 2025  git commit -a -m "version:3 commit"
+ 2026  git status
+ 2027  git logs
+ 2028  git lgo
+ 2029  git log
+ 2030  clear
+ 2031  git log
+ 2032  git reset 9c683621d01d0670f2a7db58378d99283dd67f09
+ 2033  git status
+ 2034  cat abc.txt 
+ 2035  git reset hard
+ 2036  git reset --help
+ 2037  git reset e235eb55aaf4ae5ca807232f3cffb9dbccb80f10
+ 2038  cat abc.txt 
+ 2039  git status
+ 2040  git restore abc.txt
+ 2041  git status
+ 2042  git log
+ 2043  clear
+ 2044  git log
+ 2045  cat abc.txt 
+ 2046  echo "version:3 editing" >>abc.txt
+ 2047  git commit -a -m "version:3"
+ 2048  git status
+ 2049  git log
+ 2050  git reset e235eb55aaf4ae5ca807232f3cffb9dbccb80f10
+ 2051  git status
+ 2052  cat abc.txt 
+ 2053  git commit -a -m "version:3"
+ 2054  git log
+ 2055  echo "version:4 editing" >>abc.txt
+ 2056  echo "version:5 editing" >>abc.txt
+ 2057  clear
+ 2058  git log
+ 2059  git status
+ 2060  git add abc.txt 
+ 2061  git status
+ 2062  git commit -m "version:4"
+ 2063  git statu
+ 2064  git status
+ 2065  git stage
+ 2066  clear
+ 2067  git stage
+ 2068  git log
+ 2069  git restore  e235eb55aaf4ae5ca807232f3cffb9dbccb80f10 
+ 2070  git restore  e235eb55aaf4ae5ca807232f3cffb9dbccb80f10
+ 2071  git restore e235eb55aaf4ae5ca807232f3cffb9dbccb80f10
+ 2072  clear
+ 2073  git status
+ 2074  git log
+ 2075  git restore e235eb55aaf4ae5ca807232f3cffb9dbccb80f10
+ 2076  git checkout e235eb55aaf4ae5ca807232f3cffb9dbccb80f10 abc.txt
+ 2077  git status
+ 2078  git commit -m "restored to pervious version"
+ 2079  git status
+ 2080  git lgo
+ 2081  git log
+ 2082  cat abc.txt
+ 2083  echo " version:1 " > abc.txt
+ 2084  cat abc.txt 
+ 2085  clear
+ 2086  git status
+ 2087  git log
+ 2088  cd .git
+ 2089  ls
+ 2090  cd logs
+ 2091  ls
+ 2092  cat refs/
+ 2093  cat HEAD 
+ 2094  vim HEAD 
+ 2095  cat HEAD 
+ 2096  cd ../..
+ 2097  ls
+ 2098  git status
+ 2099  git log
+ 2100  git status
+ 2101  git commit -m "from start v1"
+ 2102  git commit -a  -m "from start v1"
+ 2103  git status
+ 2104  git lgo
+ 2105  git log
+ 2106  git brach 
+ 2107  git branch 
+ 2108  git status
+ 2109  git branch
+ 2110  git log
+ 2111  git logs
+ 2112  clear
+ 2113  git log
+ 2114  echo "version:2" >>abc.txt
+ 2115  git status
+ 2116  git commit -m "version:2"
+ 2117  git commit -a -m "version:2"
+ 2118  git status
+ 2119  git log
+ 2120  git checkout 5580d0ab59b987980e4d4891ad692cb28d5c70bc abc.txt
+ 2121  cat abc.txt 
+ 2122  git committ -m "previous version restored"
+ 2123  git commit -m "previous version restored"
+ 2124  cat abc.txt 
+ 2125  clear
+ 2126  git lgo
+ 2127  git log
+ 2128  git checkout b5b844e83741bee348f9922ad8dd6e78c449ad61 abc.txt
+ 2129  git status
+ 2130  git add abc.txt 
+ 2131  git commit -m "version 2"
+ 2132  cat abc.txt 
+ 2133  cd .git
+ 2134  ll
+ 2135  cat config 
+ 2136  cat ORIG_HEAD 
+ 2137  cd ..
+ 2138  locate global
+ 2139  locate .git | grep global
+ 2140  clear
+ 2141  ll
+ 2142  git status
+ 2143  git checkout -m test
+ 2144  git branch
+ 2145  git branch test
+ 2146  git branch
+ 2147  git checkout test
+ 2148  git branch
+ 2149  git status
+ 2150  git checkout master
+ 2151  ls
+ 2152  clear
+ 2153  git status
+ 2154  git diff abc.txt
+ 2155  git diff master
+ 2156  git log -p
+ 2157  clear
+ 2158  git diff --help
+ 2159  git blame abc.txt
+ 2160  git status
+ 2161  git branch
+ 2162  git log
+ 2163  clear
+ 2164  git checkout 
+ 2165  git checkout test
+ 2166  git statu
+ 2167  git status
+ 2168  git stage
+ 2169  git checkout master
+ 2170  ll
+ 2171  clear
+ 2172  ll
+ 2173  echo "v3: added line " >>abc.txt
+ 2174  git status
+ 2175  git stage abc.txt
+ 2176  git status
+ 2177  git add abc.txt
+ 2178  git status
+ 2179  git commit - "v3: commit"
+ 2180  git log
+ 2181  git stage --help
+ 2182  git un-stage abc.txt
+ 2183  git log
+ 2184  git reset e235eb55aaf4ae5ca807232f3cffb9dbccb80f10 abc.txt
+ 2185  git status
+ 2186  git commit -m "restored to original position"
+ 2187  cat abc.txt 
+ 2188  clear
+ 2189  cat abc.txt 
+ 2190  git status
+ 2191  git blame
+ 2192  git blame abc.txt
+ 2193  commit
+ 2194  git commit
+ 2195  git add abc.txt 
+ 2196  git status
+ 2197  git commit -m "unknow commit"
+ 2198  clear
+ 2199  git status
+ 2200  git log
+ 2201  cat abc.txt 
+ 2202  clear
+ 2203  git status
+ 2204  ls
+ 2205  touch test.txt
+ 2206  git status
+ 2207  git add test.txt
+ 2208  ls
+ 2209  git status
+ 2210  git restore --staged test.txt
+ 2211  git status
+ 2212  git add test.txt
+ 2213  clear
+ 2214  git status
+ 2215  echo "some text v1" >test.txt
+ 2216  ls
+ 2217  git status
+ 2218  git commit -m "first commit for the file name test.txt"
+ 2219  git status
+ 2220  git add test.txt
+ 2221  git commit -m "2dn commit"
+ 2222  clear
+ 2223  git status
+ 2224  vim test.txt 
+ 2225  git diff test.txt
+ 2226  ls
+ 2227  docker ps
+ 2228  clear
+ 2229  git status
+ 2230  touch .gitignore
+ 2231  ls
+ 2232  git blame
+ 2233  git blame abc.txt
+ 2234  cat abc.txt 
+ 2235  git status
+ 2236  clear
+ 2237  git status
+ 2238  ls
+ 2239  cat test.txt 
+ 2240  cat abc.txt 
+ 2241  git status
+ 2242  mv test.txt .gitignore
+ 2243  git status
+ 2244  cat .gitignore
+ 2245  rm .gitignore 
+ 2246  clear
+ 2247  git status
+ 2248  ls
+ 2249  touch test.txt
+ 2250  ls
+ 2251  git status
+ 2252  echo "some text " >test.txt
+ 2253  git status
+ 2254  vim .gitignore
+ 2255  git status
+ 2256  cd .git
+ 2257  ls
+ 2258  ll
+ 2259  cd ..
+ 2260  clear
+ 2261  ls
+ 2262  ll -al
+ 2263  git status
+ 2264  git commit - m "git ignore file added "
+ 2265  clear
+ 2266  git status
+ 2267  ls -al
+ 2268  cat .git
+ 2269  cat .gitignore 
+ 2270  echo "klsfdfjls ">>test.txt
+ 2271  git status
+ 2272  git add .gitignore 
+ 2273  git commit -m "commit"
+ 2274  clear
+ 2275  git status
+ 2276  cat test
+ 2277  cat test.txt 
+ 2278  echo "this is another test"> testfile.txt
+ 2279  vim .gitignore 
+ 2280  git status
+ 2281  git commit -a -m "antoher gitignore commit"
+ 2282  clear
+ 2283  git status
+ 2284  ls
+ 2285  echo "another change " >>testfile.txt 
+ 2286  git status
+ 2287  echo "another change">>abc.txt
+ 2288  git status
+ 2289  git blame
+ 2290  git diff abc.txt
+ 2291  git blame abc.txt
+ 2292  git log
+ 2293  git brach
+ 2294  git branch
+ 2295  git checkout test
+ 2296  git status
+ 2297  git restore abc.txt 
+ 2298  git status
+ 2299  clear
+ 2300  touch test_branch_file.txt
+ 2301  echo "some text" > test_branch_file.txt 
+ 2302  git status
+ 2303  git stash 
+ 2304  git status
+ 2305  clear
+ 2306  ll
+ 2307  git log
+ 2308  clear
+ 2309  git status
+ 2310  ll
+ 2311  clear
+ 2312  ll
+ 2313  rm test.txt test_branch_file.txt testfile.txt 
+ 2314  ls
+ 2315  ll
+ 2316  celar
+ 2317  clear
+ 2318  ll
+ 2319  git status
+ 2320  git commit -m "files deleted"
+ 2321  git commit -a -m "files deleted"
+ 2322  git status
+ 2323  git lgo
+ 2324  git log
+ 2325  clear
+ 2326  git commit ls
+ 2327  git commit status
+ 2328  git status
+ 2329  git clone https://github.com/Asadkhan08/test.git
+ 2330  git status
+ 2331  git push origin main 
+ 2332  git push all origin  main 
+ 2333  git push
+ 2334  git push test
+ 2335  git push origin main
+ 2336  git push origin master
+ 2337  git push test master
+ 2338  git status
+ 2339  git log
+ 2340  ls
+ 2341  cd test
+ 2342  ls
+ 2343  touch abc.txt
+ 2344  git status
+ 2345  ls
+ 2346  git add abc.txt 
+ 2347  ls
+ 2348  clear
+ 2349  git status
+ 2350  git commit - m "first commit"
+ 2351  git commit -m "first commit"
+ 2352  git status
+ 2353  git push origin main
+ 2354  echo "some text v:1" > abc.txt 
+ 2355  clear
+ 2356  git status
+ 2357  git commit -a -m "some text added "
+ 2358  git push origin main
+ 2359  cat ~/.git-credentials
+ 2360  git config --global credential.helper cache
+ 2361  git config --global credential.helper 'cache --timeout=3600'
+ 2362  git push origin main
+ 2363  echo "some text v:2">> abc.txt 
+ 2364  git commit -a -m "some text added "
+ 2365  git push origin main
+ 2366  clear
+ 2367  git status
+ 2368  git remote -v
+ 2369  cd ..
+ 2370  git status
+ 2371  cd test
+ 2372  ls
+ 2373  clea
+ 2374  clear
+ 2375  git status
+ 2376  vim Dockerfile
+ 2377  docker ps
+ 2378  docker build -t ub_test_image. 
+ 2379  docker build -t abc .
+ 2380  clear
+ 2381  docker images
+ 2382  docker build -t ub_github_image .
+ 2383  docker images
+ 2384  docker rmi 3a97f4e7583d
+ 2385  clear
+ 2386  docker container run -d --name git_test ub_github_image
+ 2387* 
+ 2388  docker container run -d --name git_test ub_github_image bash
+ 2389  docker rm git_test
+ 2390  docker container run -d --name git_test ub_github_image bash
+ 2391  docker rm git_test
+ 2392  docker container run -d --name git_test ub_github_image /bin/bash
+ 2393  docker container run -it --name git_test ub_github_image /bin/bash
+ 2394  docker rm git_test
+ 2395  docker container run -it --name git_test ub_github_image /bin/bash
+ 2396  docker rm git_test
+ 2397  clear
+ 2398  #docker build -t ub_github_image .
+ 2399  #docker container run -it --name git_test ub_github_image /bin/bash
+ 2400  #docker rm git_test
+ 2401  vim Dockerfile 
+ 2402  git status
+ 2403  git commit -a -m "docker file added "
+ 2404  git add .
+ 2405  git status
+ 2406  git commit -a -m "docker file added "
+ 2407  git status
+ 2408  git push origin main
+ 2409  git status
+ 2410  docker ps
+ 2411  clear
+ 2412  docker ps -a
+ 2413  history
+ 2414  history > history.txt
