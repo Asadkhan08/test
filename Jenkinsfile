@@ -10,8 +10,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh ''' echo 'Testing..'
                 echo 'This is testing  stage'
+                echo 'testing stage initiated'
+                '''
             }
         }
         stage('Deploy') {
