@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM alpineu
 
 RUN mkdir /tmp/test/
 RUN echo "some text ">/tmp/test/abc.txt
